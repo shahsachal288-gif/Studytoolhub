@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Free online student tools and calculators: age, BMI, percentage, attendance, CGPA and study timetable planner.">
+  <meta name="keywords" content="free calculators, student tools, BMI calculator, age calculator, percentage calculator, attendance calculator, CGPA calculator">
+  <meta name="theme-color" content="#2457d6">
+  <title>StudyToolsHub — Free Student Calculators & Tools</title>
+  <style>
+    :root{--blue:#2457d6;--ink:#18233b;--muted:#667085;--bg:#f5f7fb;--line:#e5eaf2;--white:#fff}
+    *{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+    header{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+    .wrap{max-width:1080px;margin:auto;padding:0 18px}
+    .nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{font-size:21px;font-weight:800;color:var(--blue);text-decoration:none}
+    nav{display:flex;gap:16px;flex-wrap:wrap} nav a{color:var(--muted);text-decoration:none;font-size:14px}
+    .hero{padding:54px 0 35px;text-align:center;background:linear-gradient(135deg,#edf3ff,#fff)}
+    .hero h1{font-size:clamp(30px,5vw,48px);line-height:1.12;margin:0 0 14px}
+    .hero p{color:var(--muted);max-width:650px;margin:0 auto 22px}
+    .tag{display:inline-block;background:#e4edff;color:var(--blue);font-weight:700;border-radius:99px;padding:6px 12px;font-size:12px;margin-bottom:15px}
+    .search{width:min(100%,520px);padding:14px 16px;border:1px solid var(--line);border-radius:12px;font-size:15px}
+    main{padding:32px 0 60px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:8px 0 18px}
+    h2{margin:0;font-size:25px}.sub{color:var(--muted);font-size:14px;margin:4px 0 0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 5px 18px #17255408}
+    .card h3{margin:8px 0 5px;font-size:18px}.card p{margin:0;color:var(--muted);font-size:14px}
+    .emoji{font-size:25px}.open{display:inline-block;margin-top:14px;color:var(--blue);font-weight:700;text-decoration:none;font-size:14px}
+    .tool-area{margin-top:38px}.tool{scroll-margin-top:85px;margin-bottom:18px}
+    label{display:block;font-size:13px;font-weight:700;margin:12px 0 5px}
+    input,select,textarea{width:100%;padding:11px 12px;border:1px solid #d7deea;border-radius:9px;font:inherit;background:#fff}
+    button{border:0;background:var(--blue);color:#fff;padding:11px 16px;border-radius:9px;font-weight:700;cursor:pointer;margin-top:14px}
+    button:hover{filter:brightness(.94)} .result{margin-top:13px;padding:12px;background:#edf4ff;border-radius:9px;color:#173d9c;font-weight:700;min-height:20px}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .planner-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:8px 0}
+    footer{background:#111c32;color:#dce4f4;padding:28px 0;font-size:13px}footer a{color:#fff}
+    .notice{background:#fff8e6;border:1px solid #f3dfaa;padding:12px;border-radius:10px;color:#72551a;font-size:13px;margin-top:20px}
+    @media(max-width:760px){.grid{grid-template-columns:repeat(2,1fr)}nav{gap:9px}.nav{height:auto;padding:14px 0;align-items:flex-start;flex-direction:column}}
+    @media(max-width:480px){.grid{grid-template-columns:1fr}.two,.planner-row{grid-template-columns:1fr}.hero{padding:38px 0 28px}}
+  </style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="#">StudyToolsHub</a>
+  <nav><a href="#tools">All tools</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+</div></header>
+<section class="hero"><div class="wrap">
+  <span class="tag">FREE ONLINE STUDENT TOOLS</span>
+  <h1>Study smarter with simple tools</h1>
+  <p>Useful calculators and planning tools for students. Fast, free and easy to use on your phone or computer.</p>
+  <input class="search" id="search" placeholder="Search a tool, e.g. BMI or attendance…" aria-label="Search tools">
+</div></section>
+<main class="wrap" id="tools">
+  <div class="section-head"><div><h2>Popular tools</h2><p class="sub">Choose a tool to get started.</p></div></div>
+  <div class="grid" id="cards">
+    <article class="card" data-name="age calculator"><div class="emoji">🎂</div><h3>Age Calculator</h3><p>Calculate your age in years, months and days.</p><a class="open" href="#age">Open calculator →</a></article>
+    <article class="card" data-name="bmi body mass index calculator"><div class="emoji">⚖️</div><h3>BMI Calculator</h3><p>Estimate body mass index from height and weight.</p><a class="open" href="#bmi">Open calculator →</a></article>
+    <article class="card" data-name="percentage calculator"><div class="emoji">％</div><h3>Percentage Calculator</h3><p>Find what percentage one number is of another.</p><a class="open" href="#percentage">Open calculator →</a></article>
+    <article class="card" data-name="attendance calculator"><div class="emoji">📅</div><h3>Attendance Calculator</h3><p>Calculate attendance percentage and classes needed.</p><a class="open" href="#attendance">Open calculator →</a></article>
+    <article class="card" data-name="cgpa gpa calculator"><div class="emoji">🎓</div><h3>CGPA Calculator</h3><p>Calculate a simple credit-hour weighted GPA.</p><a class="open" href="#cgpa">Open calculator →</a></article>
+    <article class="card" data-name="study timetable planner"><div class="emoji">🗓️</div><h3>Study Timetable Planner</h3><p>Create a simple daily study plan.</p><a class="open" href="#planner">Open planner →</a></article>
+  </div>
+
+  <div class="tool-area">
+    <section class="card tool" id="age"><h2>🎂 Age Calculator</h2><p class="sub">Enter your date of birth to calculate your age today.</p>
+      <label for="dob">Date of birth</label><input type="date" id="dob"><button onclick="calcAge()">Calculate age</button><div class="result" id="ageResult" aria-live="polite"></div></section>
+
+    <section class="card tool" id="bmi"><h2>⚖️ BMI Calculator</h2><p class="sub">Enter your height and weight. BMI is a screening measure, not a diagnosis.</p>
+      <div class="two"><div><label for="height">Height (cm)</label><input type="number" id="height" min="1" placeholder="e.g. 170"></div><div><label for="weight">Weight (kg)</label><input type="number" id="weight" min="1" step=".1" placeholder="e.g. 65"></div></div>
+      <button onclick="calcBMI()">Calculate BMI</button><div class="result" id="bmiResult" aria-live="polite"></div></section>
+
+    <section class="card tool" id="percentage"><h2>％ Percentage Calculator</h2><p class="sub">Find the percentage of a total score.</p>
+      <div class="two"><div><label for="obtained">Obtained marks</label><input type="number" id="obtained" placeholder="e.g. 420"></div><div><label for="total">Total marks</label><input type="number" id="total" placeholder="e.g. 500"></div></div>
+      <button onclick="calcPercentage()">Calculate percentage</button><div class="result" id="percentageResult" aria-live="polite"></div></section>
+
+    <section class="card tool" id="attendance"><h2>📅 Attendance Calculator</h2><p class="sub">Calculate your current attendance or how many consecutive classes you need to attend to reach a target.</p>
+      <div class="two"><div><label for="attended">Classes attended</label><input type="number" id="attended" min="0" placeholder="e.g. 32"></div><div><label for="held">Total classes held</label><input type="number" id="held" min="1" placeholder="e.g. 40"></div></div>
+      <label for="target">Target attendance (%)</label><input type="number" id="target" min="1" max="100" value="75">
+      <button onclick="calcAttendance()">Calculate attendance</button><div class="result" id="attendanceResult" aria-live="polite"></div></section>
+
+    <section class="card tool" id="cgpa"><h2>🎓 CGPA Calculator</h2><p class="sub">Enter each course's grade points and credit hours. Use the grade-point scale used by your institution.</p>
+      <div id="courses"><div class="planner-row"><div><label>Grade points</label><input type="number" class="gp" min="0" max="10" step=".01" placeholder="e.g. 3.7"></div><div><label>Credit hours</label><input type="number" class="ch" min=".5" step=".5" placeholder="e.g. 3"></div></div></div>
+      <button type="button" onclick="addCourse()">Add course</button> <button onclick="calcCGPA()">Calculate CGPA</button><div class="result" id="cgpaResult" aria-live="polite"></div></section>
+
+    <section class="card tool" id="planner"><h2>🗓️ Study Timetable Planner</h2><p class="sub">Add a subject and study duration to build a simple plan for today.</p>
+      <div class="two"><div><label for="subject">Subject / task</label><input id="subject" placeholder="e.g. Anatomy revision"></div><div><label for="duration">Duration (minutes)</label><input id="duration" type="number" min="1" placeholder="e.g. 45"></div></div>
+      <button onclick="addTask()">Add to timetable</button><div class="result" id="planResult">Your study tasks will appear here.</div><ul id="taskList"></ul></section>
+  </div>
+  <section class="card" id="about" style="margin-top:30px"><h2>About StudyToolsHub</h2><p>StudyToolsHub is a simple collection of free educational calculators and study-planning utilities. Our aim is to make everyday student calculations easier. Always check important academic calculations against your institution's official rules.</p></section>
+  <section class="card" id="contact" style="margin-top:16px"><h2>Contact</h2><p>For feedback, corrections or tool suggestions, add your real contact email here before publishing: <strong>your-email@example.com</strong>.</p></section>
+  <div class="notice"><strong>Before publishing:</strong> Replace the placeholder contact email, add a Privacy Policy and Terms page, test every tool, and write original helpful content. The BMI tool is informational only and should not be used as a medical diagnosis.</div>
+</main>
+<footer><div class="wrap">© <span id="year"></span> StudyToolsHub · Free student tools · <a href="#about">About</a> · <a href="#contact">Contact</a></div></footer>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('search').addEventListener('input', e => {
+  const q=e.target.value.toLowerCase();
+  document.querySelectorAll('#cards .card').forEach(c=>c.style.display=c.dataset.name.includes(q)?'block':'none');
+});
+function show(id,msg){document.getElementById(id).textContent=msg}
+function calcAge(){
+ const v=document.getElementById('dob').value;if(!v)return show('ageResult','Please select your date of birth.');
+ const b=new Date(v+'T00:00:00'),t=new Date();if(b>t)return show('ageResult','Date of birth cannot be in the future.');
+ let y=t.getFullYear()-b.getFullYear(),m=t.getMonth()-b.getMonth(),d=t.getDate()-b.getDate();
+ if(d<0){m--;d+=new Date(t.getFullYear(),t.getMonth(),0).getDate()}if(m<0){y--;m+=12}
+ show('ageResult',`Your age is ${y} years, ${m} months and ${d} days.`);
+}
+function calcBMI(){
+ const h=+document.getElementById('height').value,w=+document.getElementById('weight').value;
+ if(h<=0||w<=0)return show('bmiResult','Enter a valid height and weight.');
+ const bmi=w/((h/100)**2);let cat=bmi<18.5?'Below the standard adult range':bmi<25?'Within the standard adult range':bmi<30?'Above the standard adult range':'In the obesity range';
+ show('bmiResult',`BMI: ${bmi.toFixed(1)} — ${cat}. Adult categories; interpretation varies by age and context.`);
+}
+function calcPercentage(){
+ const a=+document.getElementById('obtained').value,b=+document.getElementById('total').value;
+ if(b<=0||a<0)return show('percentageResult','Enter valid marks and a total greater than zero.');
+ show('percentageResult',`Percentage: ${(a/b*100).toFixed(2)}%`);
+}
+function calcAttendance(){
+ const a=+document.getElementById('attended').value,b=+document.getElementById('held').value,p=+document.getElementById('target').value;
+ if(b<=0||a<0||a>b||p<=0||p>=100)return show('attendanceResult','Check your values. Target must be greater than 0% and less than 100%.');
+ const current=a/b*100,needed=Math.max(0,Math.ceil((p*b-a)/(1-p/100)));
+ show('attendanceResult',`Current attendance: ${current.toFixed(2)}%. ${needed===0?'You have already reached your target.':`Attend the next ${needed} classes consecutively to reach ${p}%.`}`);
+}
+function addCourse(){
+ const row=document.createElement('div');row.className='planner-row';row.innerHTML='<div><label>Grade points</label><input type="number" class="gp" min="0" max="10" step=".01" placeholder="e.g. 3.7"></div><div><label>Credit hours</label><input type="number" class="ch" min=".5" step=".5" placeholder="e.g. 3"></div>';document.getElementById('courses').appendChild(row);
+}
+function calcCGPA(){
+ const gps=[...document.querySelectorAll('.gp')],chs=[...document.querySelectorAll('.ch')];let points=0,credits=0;
+ for(let i=0;i<gps.length;i++){let g=+gps[i].value,c=+chs[i].value;if(gps[i].value===''||chs[i].value===''||g<0||c<=0)return show('cgpaResult','Complete all grade-point and credit-hour fields with valid values.');points+=g*c;credits+=c}
+ show('cgpaResult',`Weighted GPA / CGPA: ${(points/credits).toFixed(2)} (based on the entries provided).`);
+}
+function addTask(){
+ const s=document.getElementById('subject').value.trim(),d=+document.getElementById('duration').value;
+ if(!s||d<=0)return show('planResult','Enter a task and a duration greater than zero.');
+ const li=document.createElement('li');li.textContent=`${s} — ${d} minutes`;document.getElementById('taskList').appendChild(li);
+ document.getElementById('subject').value='';document.getElementById('duration').value='';show('planResult','Task added to your study plan.');
+}
+</script>
+</body>
+</html>
